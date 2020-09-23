@@ -1,6 +1,8 @@
 # zsh-bird-completions
 ZSH Completion for the BIRD routing daemon
 
+[![asciicast](https://asciinema.org/a/361361.svg)](https://asciinema.org/a/361361)
+
 #### Installation on ohmyzsh
 One liner:
 ```bash
