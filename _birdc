@@ -36,6 +36,11 @@ else
         )' && ret=0
       ;;
 
+      disable|enable)
+        _wanted birdc expl 'birdc command' compadd $(birdc s p | tail -n +3 | cut -d " " -f 1 | xargs)
+        ret=0
+      ;;
+
       *)
         _describe 'birdc command' '(
           status:Show\ router\ status
