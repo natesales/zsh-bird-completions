@@ -58,14 +58,23 @@ else
     esac
 
   elif (( CURRENT == 3 )); then
-    _describe 'birdc command' '(
-      for
-      where
-      export
-      protocol
-      all
-      filtered
-    )' && ret=0
+    case $words[2] in
+      protocols)
+        _wanted birdc expl 'birdc command' compadd all $(birdc s p | tail -n +3 | cut -d " " -f 1 | xargs)
+        ret=0
+      ;;
+
+      *)
+        _describe 'birdc command' '(
+          for
+          where
+          export
+          protocol
+          all
+          filtered
+        )' && ret=0
+      ;;
+    esac
 
   elif (( CURRENT == 4 )); then
     _wanted birdc expl 'birdc' compadd $(birdc s p | tail -n +3 | cut -d " " -f 1 | xargs)
