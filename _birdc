@@ -59,6 +59,7 @@ else
       export
       protocol
       all
+      filtered
     )' && ret=0
 
   elif (( CURRENT == 4 )); then
