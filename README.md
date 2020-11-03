@@ -15,3 +15,5 @@ curl https://raw.githubusercontent.com/natesales/zsh-bird-completions/master/_bi
 cat /tmp/_birdc # Make sure everything looks ok
 sudo mv /tmp/_birdc /usr/share/zsh/functions/Completion/Linux/_birdc
 ```
+
+Make sure to load the completion by running `compinit` in your `~/.zshrc` file.
