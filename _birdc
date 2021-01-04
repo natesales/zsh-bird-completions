@@ -36,7 +36,7 @@ else
         )' && ret=0
       ;;
 
-      disable|enable|restart|reload)
+      disable|enable)
         _wanted birdc expl 'birdc command' compadd $(birdc s p | tail -n +3 | cut -d " " -f 1 | xargs)
         ret=0
       ;;
@@ -59,7 +59,7 @@ else
 
   elif (( CURRENT == 3 )); then
     case $words[2] in
-      protocols)
+      protocols|in|out)
         _wanted birdc expl 'birdc command' compadd all $(birdc s p | tail -n +3 | cut -d " " -f 1 | xargs)
         ret=0
       ;;
