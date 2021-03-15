@@ -17,3 +17,5 @@ sudo mv /tmp/_birdc /usr/share/zsh/functions/Completion/Linux/_birdc
 ```
 
 Make sure to load the completion by running `compinit` in your `~/.zshrc` file.
+
+The aliases file contains shell (bash/zsh/etc) aliases for BIRD that can be sourced from `~/.zshrc`.
