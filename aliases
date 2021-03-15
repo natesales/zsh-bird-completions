@@ -1,0 +1,14 @@
+#!/bin/bash
+
+alias b="birdc"
+alias bgpc="birdc conf"
+alias bgps="birdc show protocols | column -t"
+
+# Usage: bgpq QUERY
+bgpq() {
+	protocols=$(birdc s p | tail -n +3 | cut -d " " -f 1 | grep -iF "$1" | xargs)
+	echo "Matching $protocols"
+	for cmd in $(echo $protocols); do
+		birdc s route protocol $cmd | sed '/^BIRD/d' | sed '/^Table/d'
+	done
+}
