@@ -1,0 +1,9 @@
+current_netns=$(ip netns identify $$)
+
+if [[ $current_netns ]]; then
+    prompt_netns="(netns $current_netns)"
+else
+    prompt_netns=""
+fi
+
+export PS1='\u@\h$prompt_netns:\w\$ '
